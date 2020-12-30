@@ -198,6 +198,8 @@ import os
 BERT_MODEL_HUB = "https://tfhub.dev/google/bert_uncased_L-12_H-768_A-12/1"
 BERT_MODEL_HUB2 = os.sep.join(["..","..","tensor_hub_model_bert"])
 print(BERT_MODEL_HUB2)
+MODEL_CACHE_DIR = os.sep.join(["..","..","tensor_hub_model_bert"])
+#os.environ["TFHUB_CACHE_DIR"] = MODEL_CACHE_DIR
 
 
 # "D:\git_r\bert_parc1\sean_bert_uncased_L-12_H-768_A-12_1z"
@@ -227,7 +229,7 @@ print(tokenizer.tokenize(train_InputExamples.iloc[0].text_a))
 '''
 2. Converting the train and validation features to InputFeatures that BERT understands.¶
 '''
-MAX_SEQ_LENGTH = 20
+MAX_SEQ_LENGTH = 10
 
 train_features = run_classifier.convert_examples_to_features(train_InputExamples, label_list, MAX_SEQ_LENGTH, tokenizer)
 
@@ -371,7 +373,7 @@ def model_fn_builder(num_labels, learning_rate, num_train_steps,
 
 BATCH_SIZE = 1
 LEARNING_RATE = 0.1
-NUM_TRAIN_EPOCHS = 0.5
+NUM_TRAIN_EPOCHS = 1
 # Warmup is a period of time where the learning rate is small and gradually increases--usually helps training.
 WARMUP_PROPORTION = 0.1
 # Model configs
