@@ -196,12 +196,10 @@ train_InputExamples
 
 import os
 BERT_MODEL_HUB = "https://tfhub.dev/google/bert_uncased_L-12_H-768_A-12/1"
-BERT_MODEL_HUB2 = os.sep.join(["..","..","tensor_hub_model_bert"])
+BERT_MODEL_HUB2 = os.sep.join(["./sean_bert_uncased_L-12_H-768_A-12_1"])
 print(BERT_MODEL_HUB2)
 MODEL_CACHE_DIR = os.sep.join(["..","..","tensor_hub_model_bert"])
 #os.environ["TFHUB_CACHE_DIR"] = MODEL_CACHE_DIR
-
-
 # "D:\git_r\bert_parc1\sean_bert_uncased_L-12_H-768_A-12_1z"
 def create_tokenizer_from_hub_module():
     """Get the vocab file and casing info from the Hub module."""
